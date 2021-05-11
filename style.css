@@ -163,12 +163,121 @@ body {
 .project {
   background-color: rgba(255, 255, 255, 0.3);
   margin: 20px;
-  padding: 40px;
+  padding: 10px;
+  /* padding: 40px; */
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   border: 3px dotted #fff;
+  perspective: 1000px;
+  /* position: relative; */
+  min-height: 350px;
+  object-fit: cover;
 }
+
+.project-inner:hover {
+  transform: rotateY(180deg);
+}
+
+.project-inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transition-duration: 0.6s;
+  transition-timing-function: ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.project-front,
+.project-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+
+.project-inner .project-front {
+  z-index: 2;
+}
+
+.project-inner .project-back {
+  transform: rotateY(180deg);
+}
+
+.project-front {
+  cursor: pointer;
+}
+
+.project-front img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.project-back {
+  padding: 10px;
+  font-size: 0.8rem;
+  overflow: scroll;
+}
+
+.project-back h4 {
+  font-size: 1rem;
+  line-height: 0rem;
+}
+
+.project-back-source a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-back-button {
+  color: #fff;
+  background-color: #4B1F0E;
+  font-family: inherit;
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.project-back-button:hover {
+  transform: scale(1.05);
+  font-weight: bold;
+}
+
+.project-back-inner {
+  display: flex;
+}
+
+.project-front-end,
+.project-back-end {
+  margin: 0 10px;
+  width: 50%;
+}
+
+.project-link {
+  text-decoration: none;
+  color: #000;
+}
+
+.project-link:hover {
+  font-weight: bold;
+}
+
+
 
 .project-photo {
   position: relative;
@@ -206,7 +315,7 @@ body {
 }
 
 .project-reflex .project-photo::before {
-  content: 'REFLEX-REALITY'
+  content: 'REFLEX-REALITY';
 }
 
 .project-tetris .project-photo::before {
@@ -214,7 +323,7 @@ body {
 }
 
 .project-videodb .project-photo::before {
-  content: 'VIDEOGAME DATABASE'
+  content: 'VIDEO GAMES DATABASE'
 }
 
 .project-reflex .project-photo {
@@ -286,6 +395,14 @@ body {
   background-image: url('images/yelpcamp.png');
 }
 
+.project-color .project-photo::before {
+  content: 'COLOR PICKER'
+}
+
+.project-color .project-photo {
+  background-image: url('images/color-picker.png');
+}
+
 .project-travel .project-photo::before {
   content: "LET'S TRAVEL"
 }
@@ -308,19 +425,35 @@ body {
 }
 
 /* FOOTER */
+
+.footer {
+  margin: 40px;
+}
+
 .footer-title {
   display: block;
   width: 100%;
-  margin: 40px auto 20px;
+  /* margin: 40px auto 20px; */
   font-family: 'Kalam';
   font-size: 1.5rem;
   text-align: center;
 }
 
+.footer-text {
+  margin: 0 80px 80px;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
 
 /* MEDIA QUERIES */
 
-@media(max-width: 900px) {
+@media(max-width: 1100px) {
   .header-text {
     margin-top: 40px;
   }
@@ -328,5 +461,16 @@ body {
   .own-projects,
   .course-projects {
     grid-template-columns: 1fr;
+  }
+
+  /* .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+  } */
+
+  .footer-text {
+    margin: 0 40px 40px;
   }
 }

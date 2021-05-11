@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" />
   <link rel="stylesheet" href="./style.css">
   <title>Portfolio | Laura Markovič</title>
 </head>
@@ -47,30 +50,112 @@
 
   <main class="main">
 
-    <h3 class="main-title">My own work</h3>
+    <h2 class="main-title">My own work</h2>
     <div class="own-projects">
+
       <div class="project project-reflex">
-        <a href="https://reflex-reality.sk" target="_blank">
-          <div class="project-photo"></div>
-        </a>
-        <p class="project-description">A website for an existing real estate agency</p>
+        <div class="project-inner">
+          <div class="project-front">
+            <img src="images/reflex-screenshot.png" />
+            <p class="project-description">A website for an existing real estate agency</p>
+          </div>
+          <div class="project-back">
+            <div class="project-back-inner">
+              <div class="project-front-end">
+                <h4>Front-end</h4>
+                <p class="project-tech-list">CSS, JavaScript</p>
+              </div>
+              <div class="project-back-end">
+                <h4>Back-end</h4>
+                <p class="project-tech-list">EJS templates, Node.js, Express, MySQL</p>
+              </div>
+            </div>
+            <p class="project-back-source">Source code:
+              <a href="https://github.com/lauramarkovic/reflex-reality-mysql" target="_blank"><i
+                  class="fab fa-github"></i> GitHub</a>
+            </p>
+            <p>This bilingual website displays the offers of a real estate agency: 8 random on the homepage,
+              offers by category, or a chosen real estate with its details. The CRUD operations allow
+              the admins to add, edit, update and delete the offers. Images are uploaded through Cloudinary's widget.
+              New user receives a greeting e-mail after registering. The option of password reset is available.
+            </p>
+            <a href="https://reflex-reality.sk" target="_blank">
+              <button class="project-back-button">CHECK IT OUT</button>
+            </a>
+          </div>
+        </div>
       </div>
+
       <div class="project project-tetris">
-        <a href="http://laurastetrisgame.netlify.app" target="_blank">
-          <div class="project-photo"></div>
-        </a>
-        <p class="project-description">Tetris game application</p>
+        <div class="project-inner">
+          <div class="project-front">
+            <img src="images/tetris-screenshot.png" />
+            <p class="project-description">Tetris game application</p>
+          </div>
+          <div class="project-back">
+            <div class="project-back-inner">
+              <div class="project-front-end">
+                <h4>Front-end</h4>
+                <p class="project-tech-list">React.js (React Hooks)</p>
+                <p class="project-back-source">Source code:
+                  <a href="https://github.com/lauramarkovic/tetrisgame" target="_blank"><i class="fab fa-github"></i>
+                    GitHub</a>
+                </p>
+              </div>
+              <div class="project-back-end">
+                <h4>Back-end</h4>
+                <p class="project-tech-list">Node.js, MongoDB, GraphQL</p>
+                <p class="project-back-source">Source code:
+                  <a href="https://github.com/lauramarkovic/tetris-server" target="_blank"><i class="fab fa-github"></i>
+                    GitHub</a>
+                </p>
+              </div>
+            </div>
+            <p>
+              The top 10 scores of players (signed in users) get displayed on the Leaderboard. The user who beats the
+              highest score gets a flash notification. All of the user's scores and levels achieved are available on the
+              My Scores page.
+              <br />
+              The game itself was created based on <a class="project-link"
+                href="https://www.youtube.com/watch?v=ZGOaCxX8HIU&t=1443s" target="_blank">Thomas Weibenfalk's YouTube
+                tutorial
+                video</a>.
+            </p>
+            <a href="http://laurastetrisgame.netlify.app" target="_blank">
+              <button class="project-back-button">CHECK IT OUT</button>
+            </a>
+          </div>
+        </div>
       </div>
+
       <div class="project project-videodb">
-        <a href="http://videogamedb.netlify.app" target="_blank">
-          <div class="project-photo"></div>
-        </a>
-        <p class="project-description">Videogame database <br>(currently in development)</p>
+        <div class="project-inner">
+          <div class="project-front">
+            <img src="images/videogames-screenshot.png" />
+            <p class="project-description">Video games database <br>(currently in development)</p>
+          </div>
+          <div class="project-back">
+            <div class="project-front-end">
+              <h4>Front-end</h4>
+              <p class="project-tech-list">React.js (React Hooks)</p>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/videogamedb" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+            </div>
+            <p>
+              A database for video games created with the RAWG API.
+            </p>
+            <a href="http://videogamedb.netlify.app" target="_blank">
+              <button class="project-back-button">CHECK IT OUT</button>
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <section class="main-part-2">
-      <h3 class="main-title">Projects built within courses</h3>
+      <h2 class="main-title">Projects built within courses</h2>
 
       <div class="course-projects">
 
@@ -95,6 +180,13 @@
           <p class="project-description">A website for campgrounds</p>
         </div>
 
+        <div class="project project-course project-color">
+          <a href="https://colorproject.netlify.app/" target="_blank">
+            <div class="project-photo course"></div>
+          </a>
+          <p class="project-description">Color picker and scheme creator application</p>
+        </div>
+
         <div class="project project-course project-travel">
           <a href="https://lets-travel-app.herokuapp.com/" target="_blank">
             <div class="project-photo course"></div>
@@ -117,6 +209,12 @@
 
   <footer class="footer">
     <h3 class="footer-title">A few words about me...</h3>
+    <p class="footer-text">Besides web development, I'm deeply interested in yoga which means that I usually begin my
+      day with meditation, then I continue with the physical practice. I love to play the songs I used to listen to on
+      musical instruments like the guitar, ukulele or the piano. A year and a half ago I decided to pick up the violin
+      too, so I took lessons at the local elementary music school, as well as singing lessons. When I find the time, I
+      watch some superhero movies, Japanese cartoons, or play mainly story-driven video games.</p>
+    <p class="footer-copyright"><i class="fa fa-copyright" aria-hidden="true"></i> 2021</p>
   </footer>
 
   <script src="./script.js"></script>
