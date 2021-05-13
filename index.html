@@ -15,10 +15,13 @@
 <body>
   <header class="header">
     <nav class="nav">
-      <div class="logo"></div>
-      <ul>
-        <li>Laura Markovič</li>
-      </ul>
+      <div class="links">
+        <ul>
+          <li class="link"><a href="/">Home</a></li>
+          <li class="link"><a href="/certificates">Certificates</a></li>
+        </ul>
+      </div>
+      <div class="logo">Laura Markovič</div>
     </nav>
     <div class="header-container">
       <img src="./work_profile.jpeg" alt="profile_picture">
@@ -27,22 +30,28 @@
         <p>I graduated from the University of Economics in Bratislava in 2018 with a PhD degree. Since then, I'm
           self-employed as a real estate agent and I decided to dedicate my free time to studying web development
           through taking several on-line courses on the Udemy platform, as well as on Skillshare. Currently I'm
-          practicing what I've learned by building my own projects.</p>
+          practicing what I've learned by building my own projects.
+        </p>
+        <div class="header-button">
+          <a href="mailto:markovicova.laura@gmail.com">
+            <button class="project-back-button">CONTACT ME</button>
+          </a>
+        </div>
       </div>
       <ul class="header-experience">
         <p id="header-exp-title">I have experience with the following technologies:</p>
         <ul class="exp-list">
-          <li class="exp">HTML</li>
-          <li class="exp">CSS</li>
-          <li class="exp">JavaScript</li>
-          <li class="exp">React.js</li>
-          <li class="exp">React Hooks</li>
-          <li class="exp">Redux</li>
-          <li class="exp">Node.js</li>
-          <li class="exp">MongoDB</li>
-          <li class="exp">MySQL</li>
-          <li class="exp">GraphQL</li>
-          <li class="exp">Firebase</li>
+          <li class="exp link">HTML</li>
+          <li class="exp link">CSS</li>
+          <li class="exp link">JavaScript</li>
+          <li class="exp link">React.js</li>
+          <li class="exp link">React Hooks</li>
+          <li class="exp link">Redux</li>
+          <li class="exp link">Node.js</li>
+          <li class="exp link">MongoDB</li>
+          <li class="exp link">MySQL</li>
+          <li class="exp link">GraphQL</li>
+          <li class="exp link">Firebase</li>
         </ul>
     </div>
     </div>
@@ -63,7 +72,7 @@
             <div class="project-back-inner">
               <div class="project-front-end">
                 <h4>Front-end</h4>
-                <p class="project-tech-list">CSS, JavaScript</p>
+                <p class="project-tech-list">CSS, JavaScript, Semantic UI</p>
               </div>
               <div class="project-back-end">
                 <h4>Back-end</h4>
@@ -74,9 +83,9 @@
               <a href="https://github.com/lauramarkovic/reflex-reality-mysql" target="_blank"><i
                   class="fab fa-github"></i> GitHub</a>
             </p>
-            <p>This bilingual website displays the offers of a real estate agency: 8 random on the homepage,
+            <p>This bilingual website displays the offers of a real estate agency: 8 random ones on the homepage,
               offers by category, or a chosen real estate with its details. The CRUD operations allow
-              the admins to add, edit, update and delete the offers. Images are uploaded through Cloudinary's widget.
+              the admins to add, edit, update or delete the offers. Images are uploaded through Cloudinary's widget.
               New user receives a greeting e-mail after registering. The option of password reset is available.
             </p>
             <a href="https://reflex-reality.sk" target="_blank">
@@ -96,7 +105,7 @@
             <div class="project-back-inner">
               <div class="project-front-end">
                 <h4>Front-end</h4>
-                <p class="project-tech-list">React.js (React Hooks)</p>
+                <p class="project-tech-list">React.js, React Hooks, Styled Components</p>
                 <p class="project-back-source">Source code:
                   <a href="https://github.com/lauramarkovic/tetrisgame" target="_blank"><i class="fab fa-github"></i>
                     GitHub</a>
@@ -137,7 +146,7 @@
           <div class="project-back">
             <div class="project-front-end">
               <h4>Front-end</h4>
-              <p class="project-tech-list">React.js (React Hooks)</p>
+              <p class="project-tech-list">React.js, React Hooks</p>
               <p class="project-back-source">Source code:
                 <a href="https://github.com/lauramarkovic/videogamedb" target="_blank"><i class="fab fa-github"></i>
                   GitHub</a>
@@ -160,45 +169,205 @@
       <div class="course-projects">
 
         <div class="project project-course project-crown">
-          <a href="https://crwn-app-laura.herokuapp.com" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">A webshop for a clothing brand</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/crwn-screenshot.png" />
+              <p class="project-description">A webshop for a clothing brand</p>
+            </div>
+            <div class="project-back">
+              <div class="project-back-inner">
+                <div class="project-front-end">
+                  <h4>Front-end</h4>
+                  <p class="project-tech-list">React.js, Redux, React Hooks, SASS</p>
+                </div>
+                <div class="project-back-end">
+                  <h4>Back-end</h4>
+                  <p class="project-tech-list">Firebase</p>
+                </div>
+              </div>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/crwn-clothing" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+              <p>
+                This webshop utilizes client-side routing - React Router to navigate between the pages. It includes a
+                complete Cart functionality with Stripe payments. User and shop data are stored in Firebase.
+                Non-registered users can also sign in with their Google account.
+              </p>
+              <a href="https://crwn-app-laura.herokuapp.com" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="project project-course project-social">
-          <a href="https://modest-curran-2a210a.netlify.app/" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">Social media application</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/social-screenshot.png" />
+              <p class="project-description">Social media application</p>
+            </div>
+            <div class="project-back">
+              <div class="project-back-inner">
+                <div class="project-front-end">
+                  <h4>Front-end</h4>
+                  <p class="project-tech-list">React.js, React Hooks</p>
+                  <p class="project-back-source">Source code:
+                    <a href="https://github.com/lauramarkovic/socmed-merng-client" target="_blank"><i
+                        class="fab fa-github"></i>
+                      GitHub</a>
+                  </p>
+                </div>
+                <div class="project-back-end">
+                  <h4>Back-end</h4>
+                  <p class="project-tech-list">Node.js, MongoDB, GraphQL</p>
+                  <p class="project-back-source">Source code:
+                    <a href="https://github.com/lauramarkovic/socmed-merng-server" target="_blank"><i
+                        class="fab fa-github"></i>
+                      GitHub</a>
+                  </p>
+                </div>
+              </div>
+              <p>
+                A social media application which displays posts on the homepage. Signed in users are able to submit,
+                edit or delete posts, write and delete comments, like or dislike posts. New posts get displayed
+                immadiately without the need of
+                refreshing the page (reading data from cache).
+              </p>
+              <a href="https://modest-curran-2a210a.netlify.app/" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="project project-course project-yelp">
-          <a href="https://peaceful-escarpment-96680.herokuapp.com/" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">A website for campgrounds</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/yelpcamp-screenshot.png" />
+              <p class="project-description">A website for campgrounds</p>
+            </div>
+            <div class="project-back">
+              <div class="project-back-inner">
+                <div class="project-front-end">
+                  <h4>Front-end</h4>
+                  <p class="project-tech-list">CSS, JavaScript</p>
+                </div>
+                <div class="project-back-end">
+                  <h4>Back-end</h4>
+                  <p class="project-tech-list">EJS templates, Node.js, Express, MongoDB</p>
+                </div>
+              </div>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/yelpcamp" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+              <p>
+                Visitors can sign up and sign in, which
+                allows them to add new campgrounds or comments. Authorized users can also update or delete the
+                campgrounds or comments which have been added by them. Flash messages provide information
+                about successful
+                login, logout, or any data changes.
+              </p>
+              <a href="https://peaceful-escarpment-96680.herokuapp.com/" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="project project-course project-color">
-          <a href="https://colorproject.netlify.app/" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">Color picker and scheme creator application</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/color-screenshot.png" />
+              <p class="project-description">Color picker and scheme creator application</p>
+            </div>
+            <div class="project-back">
+              <div class="project-front-end">
+                <h4>Front-end</h4>
+                <p class="project-tech-list">React.js, Material UI</p>
+              </div>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/color-project" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+              <p>
+                An application for copying HEX, RGB or RGBA color codes from different pre-defined schemes, also for
+                creating custom color palettes which are stored in localStorage. We can generate random colors,
+                select a color from the palette, or type in any color code when adding a new color to a scheme. Palettes
+                can also be deleted.
+              </p>
+              <a href="https://colorproject.netlify.app/" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="project project-course project-travel">
-          <a href="https://lets-travel-app.herokuapp.com/" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">Hotel booking website</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/travel-screenshot.png" />
+              <p class="project-description">Hotel booking website</p>
+            </div>
+            <div class="project-back">
+              <div class="project-back-inner">
+                <div class="project-front-end">
+                  <h4>Front-end</h4>
+                  <p class="project-tech-list">CSS, JavaScript</p>
+                </div>
+                <div class="project-back-end">
+                  <h4>Back-end</h4>
+                  <p class="project-tech-list">Jade templates, Node.js, Express, MongoDB</p>
+                </div>
+              </div>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/letstravel" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+              <p>
+                This website includes a search bar with filtering and sorting options to search for a destination or
+                hotel. Signed in users can book a hotel, where the price gets calculated based on the number of nights
+                and number of guests. Users can view their orders on the My Account page.
+              </p>
+              <a href="https://lets-travel-app.herokuapp.com/" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
         <div class="project project-course project-node">
-          <a href="https://node-complete-laura.herokuapp.com/" target="_blank">
-            <div class="project-photo course"></div>
-          </a>
-          <p class="project-description">E-shop for cosmetics</p>
+          <div class="project-inner">
+            <div class="project-front">
+              <img src="images/beauty-screenshot.png" />
+              <p class="project-description">E-shop for cosmetics</p>
+            </div>
+            <div class="project-back">
+              <div class="project-back-inner">
+                <div class="project-front-end">
+                  <h4>Front-end</h4>
+                  <p class="project-tech-list">CSS, JavaScript</p>
+                </div>
+                <div class="project-back-end">
+                  <h4>Back-end</h4>
+                  <p class="project-tech-list">EJS templates, Node.js, Express, MongoDB</p>
+                </div>
+              </div>
+              <p class="project-back-source">Source code:
+                <a href="https://github.com/lauramarkovic/nodebeautyshop" target="_blank"><i class="fab fa-github"></i>
+                  GitHub</a>
+              </p>
+              <p>
+                This e-shop lists products on multiple pages using pagination, each product has its own detail page too.
+                Signed in users can add products to the cart, test payments are realized with Stripe. Users can view
+                their orders on the Orders page, also download the invoices in PDF.
+              </p>
+              <a href="https://node-complete-laura.herokuapp.com/" target="_blank">
+                <button class="project-back-button">CHECK IT OUT</button>
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
