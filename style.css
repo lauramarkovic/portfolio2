@@ -61,9 +61,10 @@ body {
 
 .links {
   display: inline-block;
-  margin-left: 40px;
+  margin: 0 40px;
   text-transform: uppercase;
   font-size: 1.2rem;
+  width: 100%;
 }
 
 .links ul li {
@@ -103,6 +104,26 @@ body {
   font-weight: 300;
 }
 
+.contact {
+  float: right;
+  padding: 5px 10px;
+  font-weight: 300;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #efebec;
+  transition: transform 0.3s ease;
+}
+
+.contact:hover {
+  transform: scale(1.05);
+  font-weight: 400;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #000;
+}
+
 .logo {
   font-family: "Kalam";
   font-size: 2.5rem;
@@ -134,10 +155,6 @@ body {
   width: 70%;
   line-height: 1.5rem;
 }
-
-/* .header-text .header-button {
-  text-align: center;
-} */
 
 .header-greetings {
   font-size: 2rem;
@@ -488,6 +505,31 @@ body {
   text-align: center;
 }
 
+/* COURSES AND CERTIFICATES */
+
+.courses {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.course {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 3px dotted #fff;
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+}
+
+.course p {
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.certificate-img {
+  width: 150px;
+  border-radius: 5px;
+}
+
 /* FOOTER */
 
 .footer {
@@ -525,6 +567,14 @@ body {
   .own-projects,
   .course-projects {
     grid-template-columns: 1fr;
+  }
+
+  .courses {
+    grid-template-columns: 1fr;
+  }
+
+  .course p {
+    text-align: center;
   }
 
   /* .project {
