@@ -160,8 +160,10 @@ body {
 }
 
 #header-exp-title {
-  text-decoration: overline 3px;
-  -webkit-text-decoration: overline 3px;
+  text-decoration: 3px;
+  text-decoration-line: overline;
+  -webkit-text-decoration-line: overline;
+  -webkit-text-decoration: 3px;
   text-decoration-color: var(--background-color);
   -webkit-text-decoration-color: var(--background-color);
   line-height: 1.5rem;
@@ -199,7 +201,7 @@ body {
 }
 
 .project {
-  grid-column: 1/span 3;
+  /* grid-column: 1/span 3; */
   background-color: rgba(255, 255, 255, 0.3);
   margin: 20px;
   padding: 10px;
@@ -212,7 +214,7 @@ body {
   perspective: 1000px;
   min-height: 350px;
   object-fit: cover;
-  height: 100%;
+  height: 90%;
 }
 
 /* .project-inner:hover {
