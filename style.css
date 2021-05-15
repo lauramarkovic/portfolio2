@@ -212,6 +212,7 @@ body {
   perspective: 1000px;
   min-height: 350px;
   object-fit: cover;
+  height: 100%;
 }
 
 /* .project-inner:hover {
