@@ -237,6 +237,11 @@ body {
   justify-content: center;
   backface-visibility: hidden;
   transform: rotateX(0deg);
+  
+  /* -webkit-perspective: 0; */
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
 }
 
 .project-inner .project-front {
