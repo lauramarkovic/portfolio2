@@ -2,32 +2,10 @@
 
 :root {
   --background-color: #efebec;
-  /* The intrinsic width of the underline stroke (in pixels). This is 
-   * the same as the height of the cap images. Don't specify the
-   * units! This is because of some of the calculations we do later on. */
+  --darkbrown-color: #4B1F0E;
   --underline-intrinsic-width: 8;
-
-  /* The actual width of the underline stroke we want to render (in pixels).
-   * You can modify this, and the sizing and positioning should be calculated
-   * accordingly. Again, Don't specify the units! */
   --underline-width: 16;
-
-  /* The colour used to draw the underline. It should match the colour
-   * used in the cap images... unfortunately we can't modify the SVG
-   * fill via CSS because it's a background image. */
-  --underline-color: #efebec;
-
-  /* We need to know the width of the cap images so that we
-   * can position everything on the x axis accordingly. */
-  --underline-cap-width: 4px;
-
-  /* The border is positioned relative to the bottom of the line.
-   * We can move it upwards a little to create an overlap effect. */
   --underline-offset-y: -2px;
-
-  /* The padding to add to the x axis. By default, the caps would be
-   * aligned with the beginning and end of the line. */
-  --underline-padding-x: 0.12em;
 }
 
 * {
@@ -49,8 +27,8 @@ body {
 }
 
 .nav {
-  padding-top: 20px;
-  display: flex;
+  margin-top: 40px;
+  height: 15vh;
   position: relative;
 }
 
@@ -59,12 +37,45 @@ body {
   list-style: none;
 }
 
+.logo {
+  font-family: "Kalam";
+  font-size: 2.5rem;
+  text-align: center;
+  letter-spacing: 0.5rem;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.contact {
+  float: right;
+  padding: 5px 10px;
+  margin-right: 40px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  transition: transform 0.3s ease;
+}
+
+.contact:hover {
+  transform: scale(1.05);
+  font-weight: 400;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #000;
+}
+
 .links {
-  display: inline-block;
   margin: 0 40px;
   text-transform: uppercase;
   font-size: 1.2rem;
-  width: 100%;
 }
 
 .links ul li {
@@ -86,7 +97,7 @@ body {
   height: 2px;
   margin: 5px 0 0;
   opacity: 0;
-  background-color: #4B1F0E;
+  background-color: var(--darkbrown-color);
   transition: all 0.3s ease-in-out;
   transition-duration: 0.75s;
 }
@@ -102,38 +113,6 @@ body {
   text-decoration: none;
   color: #000;
   font-weight: 300;
-}
-
-.contact {
-  float: right;
-  padding: 5px 10px;
-  font-weight: 300;
-  text-align: center;
-  border-radius: 8px;
-  background-color: #efebec;
-  transition: transform 0.3s ease;
-}
-
-.contact:hover {
-  transform: scale(1.05);
-  font-weight: 400;
-}
-
-.contact a {
-  text-decoration: none;
-  color: #000;
-}
-
-.logo {
-  font-family: "Kalam";
-  font-size: 2.5rem;
-  text-align: center;
-  letter-spacing: 0.5rem;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .header-container {
@@ -153,7 +132,6 @@ body {
 
 .header-text {
   width: 70%;
-  line-height: 1.5rem;
 }
 
 .header-greetings {
@@ -161,25 +139,19 @@ body {
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.3rem;
-  position: relative;
   z-index: 100;
-
   display: inline;
   --underline-width-scale: calc(var(--underline-width) / var(--underline-intrinsic-width));
-  padding: 0 10px;
   box-decoration-break: clone;
   background-repeat: no-repeat;
   background-image:
-    linear-gradient(180deg, var(--underline-color), var(--underline-color));
-  background-position-x:
-    calc(var(--underline-cap-width) * var(--underline-width-scale)),
-    0,
-    100%;
+    linear-gradient(180deg, var(--background-color), var(--background-color));
   background-position-y: calc(100% - var(--underline-offset-y) * -1);
-  background-size:
-    calc(100% - calc(var(--underline-cap-width) * var(--underline-width-scale) * 2)) calc(var(--underline-width) * 1px),
-    auto calc(var(--underline-width) * 1px),
-    auto calc(var(--underline-width) * 1px);
+  background-size: 100% 40%;
+}
+
+.header-text p {
+  line-height: 1.5rem;
 }
 
 .header-experience {
@@ -202,23 +174,6 @@ body {
   list-style: none;
 }
 
-/* .exp {
-  display: inline;
-} */
-
-/* .exp:hover {
-  transform: translateY(-5px);
-  transition: transform 0.3s ease;
-}
-
-.exp::after {
-  content: '|';
-  padding: 0 20px;
-}
-
-.exp:last-child::after {
-  content: ''
-} */
 
 /* MAIN */
 
@@ -245,7 +200,6 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   margin: 20px;
   padding: 10px;
-  /* padding: 40px; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -253,7 +207,6 @@ body {
   text-align: center;
   border: 3px dotted #fff;
   perspective: 1000px;
-  /* position: relative; */
   min-height: 350px;
   object-fit: cover;
 }
@@ -282,7 +235,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   backface-visibility: hidden;
   transform: rotateX(0deg);
 }
@@ -318,14 +270,18 @@ body {
 }
 
 .project-back-source a {
-  color: rgb(0, 0, 0);
+  color: #000;
   text-decoration: none;
   font-weight: bold;
 }
 
+.project-back-source a:hover {
+  color: var(--darkbrown-color);
+}
+
 .project-back-button {
   color: #fff;
-  background-color: #4B1F0E;
+  background-color: var(--darkbrown-color);
   font-family: inherit;
   padding: 10px;
   cursor: pointer;
@@ -359,71 +315,6 @@ body {
 }
 
 
-
-.project-photo {
-  position: relative;
-  display: inline-block;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-  background-size: cover;
-  background-position: center center;
-}
-
-.project-photo::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%) translateX(-50%);
-  z-index: 1000;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Kalam';
-}
-
-.project-photo::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(75, 31, 14, 0.7);
-  z-index: 100;
-}
-
-.project-reflex .project-photo::before {
-  content: 'REFLEX-REALITY';
-}
-
-.project-tetris .project-photo::before {
-  content: 'TETRIS APP'
-}
-
-.project-videodb .project-photo::before {
-  content: 'VIDEO GAMES DATABASE'
-}
-
-.project-reflex .project-photo {
-  background-image: url('images/reflex.png');
-}
-
-.project-tetris .project-photo {
-  background-image: url('images/tetris_app.png');
-}
-
-.project-videodb .project-photo {
-  background-image: url('images/games.png');
-}
-
-.project-description {
-  margin-top: 40px;
-}
-
-
 /* SECTION - COURSE PROJECTS */
 
 .main-part-2 {
@@ -441,63 +332,7 @@ body {
 
 .project.project-course {
   background-color: rgba(75, 31, 14, 0.1);
-  border: 2px dotted #4B1F0E;
-}
-
-/* .project-photo.course::before {
-  color: rgb(0, 0, 0);
-} */
-
-/* .project-photo.course::after {
-  background-color: rgba(75, 31, 14, 0.8);
-} */
-
-.project-crown .project-photo::before {
-  content: 'CRWN-CLOTHING'
-}
-
-.project-crown .project-photo {
-  background-image: url('images/crwn.png');
-}
-
-.project-social .project-photo::before {
-  content: 'SOCIAL MEDIA'
-}
-
-.project-social .project-photo {
-  background-image: url('images/social.png');
-}
-
-.project-yelp .project-photo::before {
-  content: 'YELPCAMP'
-}
-
-.project-yelp .project-photo {
-  background-image: url('images/yelpcamp.png');
-}
-
-.project-color .project-photo::before {
-  content: 'COLOR PICKER'
-}
-
-.project-color .project-photo {
-  background-image: url('images/color-picker.png');
-}
-
-.project-travel .project-photo::before {
-  content: "LET'S TRAVEL"
-}
-
-.project-travel .project-photo {
-  background-image: url('images/travelapp.png');
-}
-
-.project-node .project-photo::before {
-  content: 'BEAUTY SHOP'
-}
-
-.project-node .project-photo {
-  background-image: url('images/node_app.png');
+  border: 2px dotted var(--darkbrown-color);
 }
 
 #section-outro {
@@ -505,30 +340,6 @@ body {
   text-align: center;
 }
 
-/* COURSES AND CERTIFICATES */
-
-.courses {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-.course {
-  background-color: rgba(255, 255, 255, 0.3);
-  border: 3px dotted #fff;
-  padding: 20px;
-  margin: 20px;
-  text-align: center;
-}
-
-.course p {
-  text-align: left;
-  font-size: 0.8rem;
-}
-
-.certificate-img {
-  width: 150px;
-  border-radius: 5px;
-}
 
 /* FOOTER */
 
@@ -539,7 +350,6 @@ body {
 .footer-title {
   display: block;
   width: 100%;
-  /* margin: 40px auto 20px; */
   font-family: 'Kalam';
   font-size: 1.5rem;
   text-align: center;
@@ -560,8 +370,22 @@ body {
 /* MEDIA QUERIES */
 
 @media(max-width: 1100px) {
+  .header-container {
+    padding: 20px 30px;
+  }
+
   .header-text {
     margin-top: 40px;
+  }
+
+  .exp-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  .exp {
+    margin-right: 20px;
+    margin-bottom: 10px;
   }
 
   .own-projects,
@@ -569,22 +393,72 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .courses {
-    grid-template-columns: 1fr;
+  .footer-text {
+    margin: 0 40px 40px;
+  }
+}
+
+@media(max-width: 900px) {
+
+  .nav {
+    margin-top: 0;
   }
 
-  .course p {
+  .header-container img {
+    margin-right: 0;
+  }
+
+  .header-text {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 2rem;
+    top: 60px;
+  }
+
+  .contact {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+  }
+
+  .header-greetings {
+    font-size: 1.5rem;
+  }
+
+  .header-experience {
+    margin: 0;
+  }
+
+  #header-exp-title {
+    text-align: center;
+  }
+}
+
+@media(max-width: 800px) {
+  .nav {
+    height: 20vh;
+  }
+
+  .header-text {
     text-align: center;
   }
 
-  /* .project {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 400px;
-  } */
+  .footer {
+    margin: 10px;
+  }
+}
 
-  .footer-text {
-    margin: 0 40px 40px;
+@media(max-width: 400px) {
+  .logo {
+    font-size: 1.6rem;
+    top: 50px;
+  }
+
+  .header-greetings {
+    letter-spacing: 0.1rem;
+    font-size: 1.3rem;
   }
 }
